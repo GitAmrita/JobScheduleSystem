@@ -4,6 +4,7 @@ import java.util.*;
  * Created by amritachowdhury on 8/5/17.
  */
 public class Scheduler {
+
     //list that holds all the jobs
     public static List<Job> allJobs;
     // buckets holds jobs based on priority. Each bucket has a priority range that it can hold.
@@ -19,8 +20,6 @@ public class Scheduler {
     public static Map<TestInput, Job> job;
     // once the job is created in the system, map it with input dependencies
     public static Map<Job, List<TestInput>> children;
-    // input and job mapping, needed for pre processing steps just other way round from job
-    public static Map<Job, TestInput> testInput ;
     // ***************************************************************************
 
     public Scheduler() {
@@ -31,7 +30,6 @@ public class Scheduler {
         this.scheduled = new LinkedList<>();
         this.job = new HashMap<>();
         this.children = new HashMap<>();
-        this.testInput  = new HashMap<>();
     }
 
     public boolean run() {
@@ -39,10 +37,7 @@ public class Scheduler {
             String message = "Start the job scheduler";
             Logging.log(message, this.getClass().getName(), LogLevel.INFO);
             preProcess();
-            for (int i = 0; i < Config.NO_OF_PROCESSORS; i++) {
-                Processor p = new Processor();
-                pickBucketToProcess(p);
-            }
+            pickBucketToProcess();
             return true;
         } catch (Exception e) {
             Logging.log(e.getMessage(), this.getClass().getName(), LogLevel.ERROR);
@@ -60,21 +55,28 @@ public class Scheduler {
         Logging.log(message, this.getClass().getName(), LogLevel.INFO);
     }
 
-    private void createBuckets() {
+    public List<Bucket> createBuckets() {
         // get the max and min priority (range) and modulo with no of buckets. That would give the range of priority
         // each bucket will hold. Create buckets.
         int maxVal;
-        int size = populatePriorityRange() / Config.NO_OF_BUCKETS;
-        int minVal = 0;
-        for (int i = 0; i < Config.NO_OF_BUCKETS; i++) {
-            maxVal = i == Config.NO_OF_BUCKETS - 1 ? Integer.MAX_VALUE : minVal + size - 1;
-            Bucket b = new Bucket(i, minVal, maxVal);
+        int[] range = populatePriorityRange();
+        if (range[0] == range[1]) {
+            Bucket b = new Bucket(0, range[0], range[0]);
             buckets.add(b);
-            minVal += size;
+        } else {
+            int size = ((range[1] - range[0]) + 1 ) / Config.NO_OF_BUCKETS;
+            int minVal = range[0];
+            for (int i = 0; i < Config.NO_OF_BUCKETS; i++) {
+                maxVal = i == Config.NO_OF_BUCKETS - 1 ? range[1] : minVal + size - 1;
+                Bucket b = new Bucket(i, minVal, maxVal);
+                buckets.add(b);
+                minVal += size;
+            }
         }
+        return buckets;
     }
 
-    private int populatePriorityRange() {
+    public int[] populatePriorityRange() {
         // get range of priority = max - min
         int minPriority = Integer.MAX_VALUE; int maxPriority = Integer.MIN_VALUE;
         for (Job j : allJobs) {
@@ -84,7 +86,7 @@ public class Scheduler {
                 maxPriority = j.priority;
             }
         }
-        return (maxPriority - minPriority);
+        return new int[] {minPriority, maxPriority};
     }
 
     private void populateBuckets() throws Exception {
@@ -101,7 +103,7 @@ public class Scheduler {
         }
     }
 
-    private Bucket getBucket(int priority) {
+    public Bucket getBucket(int priority) {
         // Based on the job priority select the bucket
         for (Bucket b : buckets) {
             if (priority <= b.maxPriority && priority >= b.minPriority) {
@@ -111,18 +113,18 @@ public class Scheduler {
         return null;
     }
 
-    public void pickBucketToProcess(Processor p) throws Exception{
+    public void pickBucketToProcess() throws Exception{
         // Pick each bucket within the bucket time slice till all buckets are processed. Using Iterator since I'm
         // removing bucket when all jobs in the bucket are finished while iterating
         Iterator<Bucket> iterator = buckets.iterator();
         while (iterator.hasNext()) {
-            if (!pickJobToProcess(iterator.next(), p)) {
+            if (!pickJobToProcess(iterator.next())) {
                 iterator.remove();
             }
         }
     }
 
-    private boolean pickJobToProcess (Bucket bucket, Processor processor) throws Exception {
+    private boolean pickJobToProcess (Bucket bucket) throws Exception {
         // time over is set to true when the bucket time slice elapses. Jobs that don't have dependency are scheduled
         // first. Go for the next bucket when bucket time slice elapses. Returns false when all the jobs in the bucket
         // is scheduled.
@@ -142,10 +144,13 @@ public class Scheduler {
                     break;
                 }
                 // get the jobs that are not finished and don't have unfinished dependencies
-                if (currentNode.data.status != JobStatus.FINISHED && currentNode.data.children.isEmpty()) {
+                if (currentNode.data.status == JobStatus.TO_BE_STARTED && currentNode.data.children.isEmpty()) {
+                    currentNode.data.status = JobStatus.IN_PROGRESS;
                     if (processJob(currentNode.data)) {
                         finishJob(currentNode.data);
                         nodes = bucket.jobs;
+                    } else {
+                        currentNode.data.status = JobStatus.TO_BE_STARTED;
                     }
                 }
                 currentNode = nodes.getNext(currentNode);
@@ -163,7 +168,7 @@ public class Scheduler {
             currentTime = System.currentTimeMillis();
         }
         job.timeElapsed += endTime - startTime;
-        String message = String.format("%s time elapsed so far %x", getJobName(job), job.timeElapsed);
+        String message = String.format("%s time elapsed so far %x", job.name, job.timeElapsed);
         Logging.log(message, this.getClass().getName(), LogLevel.DEBUG);
         return job.timeElapsed >= job.expectedTimeToComplete ? true : false;
     }
@@ -173,7 +178,7 @@ public class Scheduler {
         Node nodeToRemove = jobNodeLookUp.get(job);
         Bucket b = nodeBucketLookUp.get(nodeToRemove);
         if (b.removeJob(nodeToRemove) == null) {
-            String message = String.format("%s There was a problem updating job %s to finished status ", getJobName(job));
+            String message = String.format("%s There was a problem updating job %s to finished status ", job.name);
             Logging.log(message, this.getClass().getName(), LogLevel.ERROR);
             throw new Exception (message);
         }
@@ -182,32 +187,19 @@ public class Scheduler {
         // dependency is over.
         for (Job j : job.parents) {
             j.children.remove(job);
-            String message = String.format("job %s removed from %s", getJobName(job), getJobName(j));
+            String message = String.format("job %s removed from %s", job.name, j.name);
             Logging.log(message, this.getClass().getName(), LogLevel.DEBUG);
         }
         // add job to the list of scheduled jobs
-        String message = String.format("%s job finished, adding to output", getJobName(job));
+        String message = String.format("%s job finished, adding to output", job.name);
         Logging.log(message, this.getClass().getName(), LogLevel.INFO);
         scheduled.add(job);
     }
 
     public void printScheduleRoutine() {
         for (Job j : scheduled) {
-            System.out.println(getJobName(j));
+            System.out.println(j.name);
         }
     }
 
-    public String getJobName(Job job) {
-        return testInput.get(job).name;
-    }
-
-    /*private void finishJobTest() {
-        for (int i = 0; i < 2; i++) {
-        Bucket test = buckets.get(i);
-        int pre = test.jobs.size();
-        Job finishedTest = test.jobs.iterateTill(2).data;
-        finishJob(finishedTest);
-        int post = test.jobs.size();
-        System.out.println("pre " + pre + " post " + post + " job " + finishedTest.jobId);}
-    }*/
 }

@@ -46,16 +46,6 @@ public class DoubleLinkedList {
         } else return n.next;
     }
 
-    public Node iterateTill(int idx ){
-        int i = 1;
-        Node tmp = head;
-        while(i < idx){
-            tmp = tmp.next;
-            i++;
-        }
-        return tmp;
-    }
-
     public void iterateBackward(){
         Node tmp = tail;
         while(tmp != null){

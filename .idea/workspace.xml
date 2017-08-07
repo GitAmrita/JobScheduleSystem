@@ -2,31 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51b7d1ae-54c4-4305-bde7-dad4b3325693" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Inputs.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/LogLevel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Logging.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Helper$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Helper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/JobSchedule.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/PriorityRangeInBucket.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Helper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JobSchedule.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PriorityRangeInBucket.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UnitTests/DoubleLinkedListTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UnitTests/SchedulerTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UnitTests/ValidRequestTests.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ValidRequest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Processor.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Processor.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Config.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/Config.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/DoubleLinkedList.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/DoubleLinkedList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Inputs.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/Inputs.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Job$1.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/Job$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Job.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/Job.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/JobStatus.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/JobStatus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Processor.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/Processor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Scheduler.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/Scheduler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/TestInput.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/TestInput.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/main.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JobScheduler.iml" afterPath="$PROJECT_DIR$/JobScheduler.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Config.java" afterPath="$PROJECT_DIR$/src/Config.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DoubleLinkedList.java" afterPath="$PROJECT_DIR$/src/DoubleLinkedList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Inputs.java" afterPath="$PROJECT_DIR$/src/Inputs.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Job.java" afterPath="$PROJECT_DIR$/src/Job.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JobStatus.java" afterPath="$PROJECT_DIR$/src/JobStatus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Processor.java" afterPath="$PROJECT_DIR$/src/Processor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Scheduler.java" afterPath="$PROJECT_DIR$/src/Scheduler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestInput.java" afterPath="$PROJECT_DIR$/src/TestInput.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,6 +35,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/JobScheduler$SchedulerTests.coverage" NAME="SchedulerTests Coverage Results" MODIFIED="1502140769208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -46,98 +47,9 @@
       <file leaf-file-name="main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+            <state relative-caret-position="559">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Inputs.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Inputs.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Job.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Job.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="65" column="115" lean-forward="false" selection-start-line="65" selection-start-column="115" selection-end-line="65" selection-end-column="115" />
-              <folding>
-                <element signature="method#sortHighestPriorityFirst#0;class#Job#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bucket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Bucket.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="29" />
-              <folding>
-                <element signature="e#544#545#0" expanded="true" />
-                <element signature="e#584#585#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Scheduler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Scheduler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-              <folding>
-                <element signature="method#Scheduler#0;class#Scheduler#0" expanded="false" />
-                <element signature="method#preProcess#0;class#Scheduler#0" expanded="false" />
-                <element signature="method#createBuckets#0;class#Scheduler#0" expanded="false" />
-                <element signature="method#populatePriorityRange#0;class#Scheduler#0" expanded="false" />
-                <element signature="method#populateBuckets#0;class#Scheduler#0" expanded="false" />
-                <element signature="method#getBucket#0;class#Scheduler#0" expanded="false" />
-                <element signature="method#pickBucketToProcess#0;class#Scheduler#0" expanded="false" />
-                <element signature="method#pickJobToProcess#0;class#Scheduler#0" expanded="false" />
-                <element signature="method#processJob#0;class#Scheduler#0" expanded="false" />
-                <element signature="method#finishJob#0;class#Scheduler#0" expanded="false" />
-                <element signature="method#printScheduleRoutine#0;class#Scheduler#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Config.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DoubleLinkedList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DoubleLinkedList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding>
-                <element signature="method#addFirst#0;class#DoubleLinkedList#0" expanded="false" />
-                <element signature="method#addLast#0;class#DoubleLinkedList#0" expanded="false" />
-                <element signature="method#iterateForward#0;class#DoubleLinkedList#0" expanded="false" />
-                <element signature="method#getNext#0;class#DoubleLinkedList#0" expanded="false" />
-                <element signature="method#iterateTill#0;class#DoubleLinkedList#0" expanded="false" />
-                <element signature="method#iterateBackward#0;class#DoubleLinkedList#0" expanded="false" />
-                <element signature="method#removeFirst#0;class#DoubleLinkedList#0" expanded="false" />
-                <element signature="method#removeNode#0;class#DoubleLinkedList#0" expanded="false" />
-                <element signature="method#removeLast#0;class#DoubleLinkedList#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -147,8 +59,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -179,23 +91,29 @@
         <option value="$PROJECT_DIR$/src/Tests/Case1.java" />
         <option value="$PROJECT_DIR$/src/Tests/TestInput.java" />
         <option value="$PROJECT_DIR$/src/TestInput.java" />
-        <option value="$PROJECT_DIR$/src/JobStatus.java" />
         <option value="$PROJECT_DIR$/src/PriorityRangeInBucket.java" />
         <option value="$PROJECT_DIR$/src/Processor.java" />
         <option value="$PROJECT_DIR$/src/LogLevel.java" />
         <option value="$PROJECT_DIR$/src/Logging.java" />
         <option value="$PROJECT_DIR$/src/Helper.java" />
-        <option value="$PROJECT_DIR$/src/DoubleLinkedList.java" />
-        <option value="$PROJECT_DIR$/src/Job.java" />
+        <option value="$PROJECT_DIR$/src/JobStatus.java" />
+        <option value="$PROJECT_DIR$/src/ValidRequest.java" />
+        <option value="$PROJECT_DIR$/UnitTests/FirstTest.java" />
+        <option value="$PROJECT_DIR$/src/Config.java" />
         <option value="$PROJECT_DIR$/src/Inputs.java" />
         <option value="$PROJECT_DIR$/src/Scheduler.java" />
-        <option value="$PROJECT_DIR$/src/Config.java" />
+        <option value="$PROJECT_DIR$/UnitTests/SchedulerTests.java" />
+        <option value="$PROJECT_DIR$/src/Job.java" />
+        <option value="$PROJECT_DIR$/UnitTests/DoubleLinkedListTests.java" />
+        <option value="$PROJECT_DIR$/src/DoubleLinkedList.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
+        <option value="$PROJECT_DIR$/UnitTests/ValidRequestTests.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="49" />
+    <option name="x" value="45" />
+    <option name="y" value="53" />
     <option name="width" value="1400" />
     <option name="height" value="770" />
   </component>
@@ -217,6 +135,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -247,16 +166,18 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
   </component>
-  <component name="RunManager" selected="Application.main">
+  <component name="RunManager" selected="JUnit.ValidRequestTests">
     <configuration default="false" name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="main" />
@@ -270,6 +191,90 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="JobScheduler" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ValidRequestTests.removeLast_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="JobScheduler" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ValidRequestTests" />
+      <option name="METHOD_NAME" value="removeLast_test" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ValidRequestTests.canBeScheduled_false_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="JobScheduler" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ValidRequestTests" />
+      <option name="METHOD_NAME" value="canBeScheduled_false_test" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ValidRequestTests.canBeScheduled_false2_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="JobScheduler" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ValidRequestTests" />
+      <option name="METHOD_NAME" value="canBeScheduled_false2_test" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ValidRequestTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="JobScheduler" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ValidRequestTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -476,12 +481,20 @@
       <listeners />
       <method />
     </configuration>
-    <list size="1">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.main" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ValidRequestTests.removeLast_test" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ValidRequestTests.canBeScheduled_false_test" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ValidRequestTests.canBeScheduled_false2_test" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ValidRequestTests" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.main" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ValidRequestTests" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ValidRequestTests.canBeScheduled_false2_test" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ValidRequestTests.canBeScheduled_false_test" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ValidRequestTests.removeLast_test" />
+        <item index="4" class="java.lang.String" itemvalue="Application.main" />
       </list>
     </recent_temporary>
   </component>
@@ -498,8 +511,40 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="DoubleLinkedListTests_getNext_test - 2017.08.07 at 14h 59m 56s.xml">
+      <configuration name="DoubleLinkedListTests.getNext_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DoubleLinkedListTests_getNext_test - 2017.08.07 at 15h 00m 50s.xml">
+      <configuration name="DoubleLinkedListTests.getNext_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DoubleLinkedListTests_removeFirst_test - 2017.08.07 at 15h 04m 29s.xml">
+      <configuration name="DoubleLinkedListTests.removeFirst_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DoubleLinkedListTests_removeLast_test - 2017.08.07 at 15h 05m 09s.xml">
+      <configuration name="DoubleLinkedListTests.removeLast_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DoubleLinkedListTests_removeNode_test - 2017.08.07 at 15h 07m 14s.xml">
+      <configuration name="DoubleLinkedListTests.removeNode_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DoubleLinkedListTests_removeNode_test - 2017.08.07 at 15h 23m 28s.xml">
+      <configuration name="DoubleLinkedListTests.removeNode_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ValidRequestTests - 2017.08.07 at 15h 34m 49s.xml">
+      <configuration name="ValidRequestTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ValidRequestTests_canBeScheduled_false2_test - 2017.08.07 at 15h 33m 14s.xml">
+      <configuration name="ValidRequestTests.canBeScheduled_false2_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ValidRequestTests_canBeScheduled_false_test - 2017.08.07 at 15h 32m 16s.xml">
+      <configuration name="ValidRequestTests.canBeScheduled_false_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ValidRequestTests_removeLast_test - 2017.08.07 at 15h 30m 51s.xml">
+      <configuration name="ValidRequestTests.removeLast_test" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="49" width="1400" height="770" extended-state="0" />
+    <frame x="45" y="53" width="1400" height="770" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -511,33 +556,65 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4051355" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39942938" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4051355" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="337" />
+      <option name="time" value="483" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -548,17 +625,108 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        <state relative-caret-position="315">
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Inputs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Job.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        <state relative-caret-position="915">
+          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
+            <element signature="method#Job#1;class#Job#0" expanded="false" />
+            <element signature="method#setParentsAndChildren#0;class#Job#0" expanded="false" />
+            <element signature="method#getJobId#0;class#Job#0" expanded="false" />
+            <element signature="method#sortHighestPriorityFirst#0;class#Job#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoubleLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+          <folding>
+            <element signature="e#180#181#0" expanded="false" />
+            <element signature="e#204#205#0" expanded="false" />
+            <element signature="method#addFirst#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#addLast#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#iterateForward#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#getNext#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#iterateBackward#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#removeFirst#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#removeNode#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#removeLast#0;class#DoubleLinkedList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTests/SchedulerTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTests/DoubleLinkedListTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="17" lean-forward="false" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Inputs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Job.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#Job#1;class#Job#0" expanded="false" />
+            <element signature="method#setParentsAndChildren#0;class#Job#0" expanded="false" />
+            <element signature="method#getJobId#0;class#Job#0" expanded="false" />
             <element signature="method#sortHighestPriorityFirst#0;class#Job#0" expanded="false" />
           </folding>
         </state>
@@ -566,10 +734,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Scheduler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="690">
+          <caret line="195" column="5" lean-forward="false" selection-start-line="195" selection-start-column="5" selection-end-line="195" selection-end-column="5" />
           <folding>
             <element signature="method#Scheduler#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#run#0;class#Scheduler#0" expanded="false" />
             <element signature="method#preProcess#0;class#Scheduler#0" expanded="false" />
             <element signature="method#createBuckets#0;class#Scheduler#0" expanded="false" />
             <element signature="method#populatePriorityRange#0;class#Scheduler#0" expanded="false" />
@@ -584,21 +753,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helper.java">
+    <entry file="file://$PROJECT_DIR$/src/Bucket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="56" lean-forward="false" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+        <state relative-caret-position="390">
+          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+          <folding>
+            <element signature="method#Bucket#0;class#Bucket#0" expanded="false" />
+            <element signature="method#addJob#0;class#Bucket#0" expanded="false" />
+            <element signature="method#compareTo#0;class#Bucket#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Job.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding>
+            <element signature="method#Job#1;class#Job#0" expanded="false" />
+            <element signature="method#setParentsAndChildren#0;class#Job#0" expanded="false" />
+            <element signature="method#getJobId#0;class#Job#0" expanded="false" />
+            <element signature="method#sortHighestPriorityFirst#0;class#Job#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Scheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#Scheduler#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#run#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#preProcess#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#createBuckets#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#populatePriorityRange#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#populateBuckets#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#getBucket#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#pickBucketToProcess#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#pickJobToProcess#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#processJob#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#finishJob#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#printScheduleRoutine#0;class#Scheduler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helper.java" />
     <entry file="file://$PROJECT_DIR$/src/Bucket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#584#585#0" expanded="true" />
+            <element signature="method#Bucket#0;class#Bucket#0" expanded="false" />
+            <element signature="method#addJob#0;class#Bucket#0" expanded="false" />
+            <element signature="method#compareTo#0;class#Bucket#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -608,11 +825,12 @@
         <state relative-caret-position="555">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
+            <element signature="e#180#181#0" expanded="false" />
+            <element signature="e#204#205#0" expanded="false" />
             <element signature="method#addFirst#0;class#DoubleLinkedList#0" expanded="false" />
             <element signature="method#addLast#0;class#DoubleLinkedList#0" expanded="false" />
             <element signature="method#iterateForward#0;class#DoubleLinkedList#0" expanded="false" />
             <element signature="method#getNext#0;class#DoubleLinkedList#0" expanded="false" />
-            <element signature="method#iterateTill#0;class#DoubleLinkedList#0" expanded="false" />
             <element signature="method#iterateBackward#0;class#DoubleLinkedList#0" expanded="false" />
             <element signature="method#removeFirst#0;class#DoubleLinkedList#0" expanded="false" />
             <element signature="method#removeNode#0;class#DoubleLinkedList#0" expanded="false" />
@@ -645,174 +863,58 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JobDependencyMapping.java" />
-    <entry file="file://$PROJECT_DIR$/src/TestCases/TestInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestCases/Case1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/Case1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/TestInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestCases/TestInput.java" />
+    <entry file="file://$PROJECT_DIR$/src/TestCases/Case1.java" />
+    <entry file="file://$PROJECT_DIR$/src/Tests/Case1.java" />
+    <entry file="file://$PROJECT_DIR$/src/Tests/TestInput.java" />
+    <entry file="file://$PROJECT_DIR$/src/JobSchedule.java" />
+    <entry file="file://$PROJECT_DIR$/src/PriorityRangeInBucket.java" />
+    <entry file="file://$PROJECT_DIR$/src/Helper.java" />
+    <entry file="file://$PROJECT_DIR$/src/Processor.java" />
     <entry file="file://$PROJECT_DIR$/src/TestInput.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JobSchedule.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="14" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PriorityRangeInBucket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JobStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogLevel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding>
-            <element signature="e#161#162#0" expanded="true" />
-            <element signature="e#195#196#0" expanded="true" />
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#252#253#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Logging.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DoubleLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="method#addFirst#0;class#DoubleLinkedList#0" expanded="false" />
-            <element signature="method#addLast#0;class#DoubleLinkedList#0" expanded="false" />
-            <element signature="method#iterateForward#0;class#DoubleLinkedList#0" expanded="false" />
-            <element signature="method#getNext#0;class#DoubleLinkedList#0" expanded="false" />
-            <element signature="method#iterateTill#0;class#DoubleLinkedList#0" expanded="false" />
-            <element signature="method#iterateBackward#0;class#DoubleLinkedList#0" expanded="false" />
-            <element signature="method#removeFirst#0;class#DoubleLinkedList#0" expanded="false" />
-            <element signature="method#removeNode#0;class#DoubleLinkedList#0" expanded="false" />
-            <element signature="method#removeLast#0;class#DoubleLinkedList#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTests/FirstTest.java" />
     <entry file="file://$PROJECT_DIR$/src/Bucket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="29" />
+        <state relative-caret-position="270">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#584#585#0" expanded="true" />
+            <element signature="method#Bucket#0;class#Bucket#0" expanded="false" />
+            <element signature="method#addJob#0;class#Bucket#0" expanded="false" />
+            <element signature="method#compareTo#0;class#Bucket#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Job.java">
+    <entry file="file://$PROJECT_DIR$/src/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="65" column="115" lean-forward="false" selection-start-line="65" selection-start-column="115" selection-end-line="65" selection-end-column="115" />
-          <folding>
-            <element signature="method#sortHighestPriorityFirst#0;class#Job#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Inputs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Scheduler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+        <state relative-caret-position="705">
+          <caret line="203" column="0" lean-forward="true" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
           <folding>
             <element signature="method#Scheduler#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#run#0;class#Scheduler#0" expanded="false" />
             <element signature="method#preProcess#0;class#Scheduler#0" expanded="false" />
             <element signature="method#createBuckets#0;class#Scheduler#0" expanded="false" />
             <element signature="method#populatePriorityRange#0;class#Scheduler#0" expanded="false" />
@@ -827,18 +929,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/DoubleLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="405">
+          <caret line="65" column="5" lean-forward="false" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+          <folding>
+            <element signature="e#180#181#0" expanded="false" />
+            <element signature="e#204#205#0" expanded="false" />
+            <element signature="method#addFirst#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#addLast#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#iterateForward#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#getNext#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#iterateBackward#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#removeFirst#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#removeNode#0;class#DoubleLinkedList#0" expanded="false" />
+            <element signature="method#removeLast#0;class#DoubleLinkedList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTests/SchedulerTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Inputs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Job.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <folding>
+            <element signature="method#Job#1;class#Job#0" expanded="false" />
+            <element signature="method#setParentsAndChildren#0;class#Job#0" expanded="false" />
+            <element signature="method#getJobId#0;class#Job#0" expanded="false" />
+            <element signature="method#sortHighestPriorityFirst#0;class#Job#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTests/DoubleLinkedListTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="68" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ValidRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTests/ValidRequestTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LogLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JobStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        <state relative-caret-position="559">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -908,6 +1108,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>junit:junit:4.5</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

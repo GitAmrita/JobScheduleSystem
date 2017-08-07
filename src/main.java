@@ -5,27 +5,26 @@ import java.util.List;
  */
 public class main {
 
-    public static void main(String a[]){
+    public static void main(String a[]) throws Exception{
         long startTime = System.currentTimeMillis();
         jobCreationTest();
         long endTime = System.currentTimeMillis();
         long totalTimeTakenToScheduleJobs = (endTime - startTime);
-        String message = String.format("total time elapsed in milliseconds %x",totalTimeTakenToScheduleJobs);
+        String message = String.format("total time elapsed in milliseconds %s", String.valueOf(
+                totalTimeTakenToScheduleJobs));
         Logging.log(message, "main", LogLevel.INFO);
     }
 
-    public static void jobCreationTest() {
+    public static void jobCreationTest() throws Exception {
         Scheduler scheduler = new Scheduler();
         // pre processing
-        if (PreProcess(scheduler)) {
-            if (scheduler.run()) {
-                scheduler.printScheduleRoutine();
-            }
+        PreProcess(scheduler);
+        if (scheduler.run()) {
+            scheduler.printScheduleRoutine();
         }
     }
 
-    private static boolean PreProcess(Scheduler scheduler) {
-        try {
+    private static void PreProcess(Scheduler scheduler) throws Exception {
             List<TestInput> input = Inputs.inputTest_1();
             // create a job id for all the jobs and insert job in the global all jobs
             for (TestInput i : input) {
@@ -40,10 +39,10 @@ public class main {
             for (Job job : scheduler.allJobs) {
                 job.setPriority();
             }
-        } catch (Exception e) {
-            Logging.log(e.getMessage(), "main", LogLevel.ERROR);
-            return false;
+            ValidRequest request = new ValidRequest(scheduler.allJobs);
+            if (!request.canScheduleBeCompleted()) {
+                throw new Exception("The scheduler cannot be completed within the given deadline." +
+                        " Check the logs for more information.");
+            }
         }
-        return true;
-    }
 }

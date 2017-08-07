@@ -5,36 +5,47 @@ import java.util.*;
  */
 
 public class Job {
-    public static int jobCount = 1;
+    public static int jobCount = 1; // for generating job ids
     public int jobId; public Set<Job> parents; public Set<Job> children; public JobStatus status;
     public long expectedTimeToComplete; public long timeElapsed; public int priority;
+    public Scheduler schedulerObj;
 
-    public Job(TestInput input) throws Exception {
-        this.jobId = input.deadline; //getJobId()
+    public Job(TestInput input, Scheduler scheduler) throws Exception  {
+        this.schedulerObj = scheduler;
+        this.jobId = getJobId();
         this.status = JobStatus.TO_BE_STARTED;
         this.expectedTimeToComplete = input.expectedCompletion;
         this.timeElapsed = 0;
         this.priority = 0;
         this.children = new HashSet<>();
         this.parents = new HashSet<>();
-        Helper.children.put(this, input.dependencies);
-        Helper.job.put(input, this);
+        // store temporarily all the dependencies for this job
+        schedulerObj.children.put(this, input.dependencies);
+        // mapping and reverse mapping between job and input
+        schedulerObj.job.put(input, this);
+        schedulerObj.testInput.put(this, input);
     }
 
     public void setParentsAndChildren() {
-        List<TestInput> list = Helper.children.get(this);
+        // Store all the children (dependencies) of this job and store the reverse as well
+        List<TestInput> list = schedulerObj.children.get(this);
         for (TestInput t : list) {
-            Job j = Helper.job.get(t);
+            Job j = schedulerObj.job.get(t);
             this.children.add(j);
             j.parents.add(this);
+            String message = String.format("Parent: %s children : %s", schedulerObj.getJobName(this),
+                    schedulerObj.getJobName(j));
+            Logging.log(message, this.getClass().getName(), LogLevel.DEBUG);
         }
     }
 
-    public void  setPriority(){
+    // if there are n jobs dependant on this job and all the n jobs have equal priority say p then priority of this job = p + 1 * n
+    // else priority of this job = max of priorities for n jobs + 1 * frequency of max priority
+    public void  setPriority() {
         if(this.parents.size() == 0) {
             this.priority = 0;
         } else {
-            List<Job> list = Helper.sortHighestPriorityFirst(new ArrayList<>(this.parents));
+            List<Job> list = sortHighestPriorityFirst(new ArrayList<>(this.parents));
             int highestPriority = list.get(0).priority;
             int i = 0;
             for (Job j : list) {
@@ -46,14 +57,33 @@ public class Job {
             }
             this.priority = highestPriority + 1 * i;
         }
+        String message = String.format("Priority of: %s is set to : %d", schedulerObj.getJobName(this),this.priority);
+        Logging.log(message, this.getClass().getName(), LogLevel.DEBUG);
     }
 
-    private int getJobId() throws Exception{
-        if (jobCount == Integer.MAX_VALUE) {
-            throw new Exception ("System cant take any more jobs");
+    private int getJobId() throws Exception {
+        if (jobCount == Config.MAX_NO_OF_JOBS) {
+            String message = String.format("Number of jobs exceeded system capacity of %d", Config.MAX_NO_OF_JOBS);
+            throw new Exception (message);
         }
         int id = jobCount;
         jobCount += 1;
         return id;
+    }
+
+    // sort jobs based on highest priority
+    public List<Job> sortHighestPriorityFirst(List<Job> jobs) {
+        Collections.sort(jobs, new Comparator<Job>() {
+            public int compare(Job j1, Job j2) {
+                if (j1.priority < j2.priority) {
+                    return 1;
+                } else if (j1.priority == j2.priority) {
+                    return 0;
+                } else {
+                    return -1;
+                }
+            }
+        });
+        return jobs;
     }
 }

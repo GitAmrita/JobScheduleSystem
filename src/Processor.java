@@ -6,13 +6,12 @@ import java.util.Queue;
  */
 public class Processor {
     private static int processorId = 0;
-    int id; Queue<Job> jobQueue;
+    int id;
 
 
     public Processor() {
         try {
             this.id = getProcessorId();
-            this.jobQueue = new LinkedList<>();
         } catch(Exception ex) {
 
         }

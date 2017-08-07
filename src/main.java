@@ -1,50 +1,49 @@
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by amritachowdhury on 8/5/17.
  */
 public class main {
+
     public static void main(String a[]){
+        long startTime = System.currentTimeMillis();
         jobCreationTest();
+        long endTime = System.currentTimeMillis();
+        long totalTimeTakenToScheduleJobs = (endTime - startTime);
+        String message = String.format("total time elapsed in milliseconds %x",totalTimeTakenToScheduleJobs);
+        Logging.log(message, "main", LogLevel.INFO);
     }
 
     public static void jobCreationTest() {
-        try {
-            List<TestInput> input = inputTest();
-            for (TestInput i : input) {
-                Job j = new Job(i);
-                Helper.allJobs.add(j);
+        Scheduler scheduler = new Scheduler();
+        // pre processing
+        if (PreProcess(scheduler)) {
+            if (scheduler.run()) {
+                scheduler.printScheduleRoutine();
             }
-            for (Job job : Helper.allJobs) {
-                job.setParentsAndChildren();
-            }
-            for (Job job : Helper.allJobs) {
-                job.setPriority();
-            }
-            Scheduler s = new Scheduler();
-            s.run();
-            return;
-        } catch(Exception e) {}
+        }
     }
 
-    public static List<TestInput> inputTest() {
-        TestInput t6 = new TestInput(2, 6);
-        TestInput t5 = new TestInput(1, 5);
-        TestInput t4 = new TestInput(4, 4);
-        TestInput t3 = new TestInput(3, 3);
-        TestInput t2 = new TestInput(2, 2);
-        TestInput t1 = new TestInput(1, 1);
-        List<TestInput> t4Dependencies = new ArrayList<>(); t4Dependencies.add(t5); t4Dependencies.add(t6);
-        t4.setDependencies(t4Dependencies);
-        List<TestInput> t3Dependencies = new ArrayList<>(); t3Dependencies.add(t4);
-        t3.setDependencies(t3Dependencies);
-        List<TestInput> t2Dependencies = new ArrayList<>(); t2Dependencies.add(t4);
-        t2.setDependencies(t2Dependencies);
-        List<TestInput> t1Dependencies = new ArrayList<>(); t1Dependencies.add(t4); t1Dependencies.add(t5);
-        t1.setDependencies(t1Dependencies);
-        List<TestInput> input = new ArrayList<>(); input.add(t1); input.add(t2); input.add(t3); input.add(t4); input.add(t5);
-        input.add(t6);
-        return input;
+    private static boolean PreProcess(Scheduler scheduler) {
+        try {
+            List<TestInput> input = Inputs.inputTest_1();
+            // create a job id for all the jobs and insert job in the global all jobs
+            for (TestInput i : input) {
+                Job j = new Job(i, scheduler);
+                scheduler.allJobs.add(j);
+            }
+            // set parent children relationships in the system
+            for (Job job : scheduler.allJobs) {
+                job.setParentsAndChildren();
+            }
+            // set priority of jobs
+            for (Job job : scheduler.allJobs) {
+                job.setPriority();
+            }
+        } catch (Exception e) {
+            Logging.log(e.getMessage(), "main", LogLevel.ERROR);
+            return false;
+        }
+        return true;
     }
 }

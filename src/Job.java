@@ -6,8 +6,8 @@ import java.util.*;
 
 public class Job {
     public static int jobCount = 1;
-    public int jobId; private Set<Job> parents; private Set<Job> children; public JobStatus status;
-    private int expectedTimeToComplete; private int timeElapsed; public int priority;
+    public int jobId; public Set<Job> parents; public Set<Job> children; public JobStatus status;
+    public long expectedTimeToComplete; public long timeElapsed; public int priority;
 
     public Job(TestInput input) throws Exception {
         this.jobId = input.deadline; //getJobId()

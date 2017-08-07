@@ -14,11 +14,20 @@ public class Scheduler {
             createBuckets();
             populateBuckets();
             Collections.sort(buckets);
-            finishJobTest();
+            run();
+            System.out.println("end");
+            printScheduleRoutine();
         } catch (Exception ex) {
 
         }
     }
+
+    private void printScheduleRoutine() {
+        for (Job j : scheduled) {
+            System.out.println(j.jobId);
+        }
+    }
+
     private int populatePriorityRange() {
         int minPriority = Integer.MAX_VALUE; int maxPriority = Integer.MIN_VALUE;
         for (Job j : Helper.allJobs) {
@@ -48,13 +57,63 @@ public class Scheduler {
         Bucket b = nodeBucketLookUp.get(nodeToRemove);
         Job removedJob = b.removeJob(nodeToRemove).data;
         removedJob.status = JobStatus.FINISHED;
+        for (Job j : removedJob.parents) {
+            j.children.remove(removedJob);
+        }
         scheduled.add(removedJob);
     }
 
-    public void pickJob() {
-        for (Bucket b : buckets) {
-            // don't know how to do.
+    public void pickBucketToProcess(Processor p) {
+        Iterator<Bucket> iterator = buckets.iterator();
+        while (iterator.hasNext()) {
+            if (!pickJobToProcess(iterator.next(), p)) {
+                iterator.remove();
+            }
         }
+    }
+
+    private boolean pickJobToProcess(Bucket bucket, Processor processor) {
+        DoubleLinkedList nodes = bucket.jobs;
+        if (nodes == null || nodes.isEmpty()) {
+            return false;
+        }
+        boolean timeOver = false;
+        long currentTime = System.currentTimeMillis();
+        long endTime = currentTime + Config.BUCKET_TIME_SLICE;
+        while (!nodes.isEmpty() && !timeOver) {
+            Node currentNode = nodes.getNext(null);
+            while (currentNode != null) {
+                if (currentTime >= endTime) {
+                    timeOver = true;
+                    break;
+                }
+                if (currentNode.data.status != JobStatus.FINISHED && currentNode.data.children.isEmpty()) {
+                    boolean isJobFinished = processJob(currentNode.data);
+                    if (isJobFinished) {
+                        finishJob(currentNode.data);
+                        nodes = bucket.jobs;
+                    }
+                }
+                currentNode = nodes.getNext(currentNode);
+            }
+        }
+        return nodes == null || nodes.isEmpty() ? false : true;
+    }
+
+    private boolean processJob(Job job) {
+        boolean finished = false;
+        long startTime = System.currentTimeMillis();
+        long endTime = startTime + Config.JOB_TIME_SLICE;
+        long currentTime = startTime;
+        while (currentTime <= endTime) {
+            if (job.timeElapsed >= job.expectedTimeToComplete) {
+                finished = true;
+                break;
+            }
+            currentTime = System.currentTimeMillis();
+        }
+        job.timeElapsed += endTime - startTime;
+        return finished;
     }
 
     private Bucket getBucket(int priority) {
@@ -78,7 +137,11 @@ public class Scheduler {
         }
     }
 
-    public void run() {}
+    public void run() {
+        System.out.println("run");
+        Processor p = new Processor();
+        pickBucketToProcess(p);
+    }
 
     private void finishJobTest() {
         for (int i = 0; i < 2; i++) {

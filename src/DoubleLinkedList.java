@@ -36,6 +36,11 @@ public class DoubleLinkedList {
             tmp = tmp.next;
         }
     }
+    public Node getNext(Node n) {
+        if (n == null) {
+            return head;
+        } else return n.next;
+    }
     public Node iterateTill(int idx ){
         int i = 1;
         Node tmp = head;
@@ -69,7 +74,8 @@ public class DoubleLinkedList {
         } else if (node == tail) {
             removeLast();
         } else {
-            node.prev = node.next;
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
             size--;
         }
         return node;

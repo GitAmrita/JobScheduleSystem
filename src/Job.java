@@ -11,9 +11,13 @@ public class Job {
     public String name;
     public Scheduler schedulerObj;
 
-    public Job(int jobId, int priority) {
+    // for unit testing
+    public Job(int jobId, int priority, String name) {
         this.jobId = jobId;
         this.priority = priority;
+        this.name = name;
+        this.children = new HashSet<>();
+        this.parents = new HashSet<>();
     }
 
     public Job(TestInput input, Scheduler scheduler) throws Exception  {
@@ -25,7 +29,7 @@ public class Job {
         this.expectedTimeToComplete = input.expectedCompletion;
         this.deadline = input.deadline;
         this.timeElapsed = 0;
-        this.priority = 0;
+        this.priority = 1;
         this.children = new HashSet<>();
         this.parents = new HashSet<>();
         // store temporarily all the dependencies for this job
@@ -47,51 +51,23 @@ public class Job {
         }
     }
 
-    // if there are n jobs dependant on this job and all the n jobs have equal priority say p then priority of this job = p + 1 * n
-    // else priority of this job = max of priorities for n jobs + 1 * frequency of max priority
+    // reset priority to 1. For all the parents of job x add x.priority += parent.priority
+    // for all children of x recalculate priority. Old priority is an optimization, if priority didn't
+    // change from previous value then no need to recalculate children
     public void setPriority() {
-        if (this.name.equals("T1") || this.name.equals("T2") || this.name.equals("T3")) {this.priority = 0;}
-        else if (this.name.equals("T5") || this.name.equals("T6")) {this.priority = 4;}
-        else {this.priority = 3;}
+        int oldPriority = this.priority;
+        this.priority = 1;
+       for (Job p : this.parents) {
+           this.priority += p.priority;
+       }
+       if (oldPriority != this.priority) {
+           for (Job c : this.children) {
+               c.setPriority();
+           }
+       }
         String message = String.format("Priority of: %s is set to : %d", this.name, this.priority);
         Logging.log(message, this.getClass().getName(), LogLevel.DEBUG);
     }
-    /*public void  setPriority() {
-        if(this.parents.size() == 0) {
-            this.priority = 1;
-        } else {
-            List<Job> list = sortHighestPriorityFirst(new ArrayList<>(this.parents));
-            int highestPriority = list.get(0).priority;
-            int i = 0;
-            for (Job j : list) {
-               if (j.priority == highestPriority) {
-                   i++;
-               } else {
-                   break;
-               }
-            }
-            this.priority = highestPriority + 1 * i;
-        }
-        setChildrenPriority();
-        String message = String.format("Priority of: %s is set to : %d", this.name, this.priority);
-        Logging.log(message, this.getClass().getName(), LogLevel.DEBUG);
-
-    }*/
-
-    /*private void setChildrenPriority() {
-        for (Job child : this.children) {
-            if (child.priority == 0) {
-                continue;
-            }
-            if (this.priority <= child.priority) {
-                child.priority += 1;
-            } else {
-                child.priority = this.priority + 1;
-            }
-            String message = String.format("Priority of: %s is set to : %d", child.name, child.priority);
-            Logging.log(message, this.getClass().getName(), LogLevel.DEBUG);
-        }
-    }*/
 
     private int getJobId() throws Exception {
         if (jobCount == Config.MAX_NO_OF_JOBS) {
@@ -103,19 +79,4 @@ public class Job {
         return id;
     }
 
-    // sort jobs based on highest priority
-    public List<Job> sortHighestPriorityFirst(List<Job> jobs) {
-        Collections.sort(jobs, new Comparator<Job>() {
-            public int compare(Job j1, Job j2) {
-                if (j1.priority < j2.priority) {
-                    return 1;
-                } else if (j1.priority == j2.priority) {
-                    return 0;
-                } else {
-                    return -1;
-                }
-            }
-        });
-        return jobs;
-    }
 }

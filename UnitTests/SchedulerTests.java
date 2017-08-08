@@ -12,9 +12,9 @@ public class SchedulerTests {
     public void populatePriorityRange_onlyOnePriority_test() {
         Scheduler testObj = new Scheduler();
         testObj.allJobs = new ArrayList<>(4);
-        Job j1 = new Job(1, 3);
-        Job j2 = new Job(2, 3);
-        Job j3 = new Job(3, 3);
+        Job j1 = new Job(1, 3, "j1");
+        Job j2 = new Job(2, 3, "j2");
+        Job j3 = new Job(3, 3, "j3");
         testObj.allJobs.add(j1); testObj.allJobs.add(j2); testObj.allJobs.add(j3);
         int [] g = testObj.populatePriorityRange();
         Assert.assertTrue(g.length == 2);
@@ -25,8 +25,8 @@ public class SchedulerTests {
     public void populatePriorityRange_test() {
         Scheduler testObj = new Scheduler();
         testObj.allJobs = new ArrayList<>(4);
-        Job j1 = new Job(1, 5);
-        Job j2 = new Job(2, 9);
+        Job j1 = new Job(1, 5, "j1");
+        Job j2 = new Job(2, 9, "j2");
         testObj.allJobs.add(j1); testObj.allJobs.add(j2);
         int g [] = testObj.populatePriorityRange();
         Assert.assertTrue(g.length == 2);
@@ -37,8 +37,8 @@ public class SchedulerTests {
     public void createBuckets_onlyOnePriority_test() {
         Scheduler testObj = new Scheduler();
         testObj.allJobs = new ArrayList<>(4);
-        Job j1 = new Job(1, 1);
-        Job j2 = new Job(2, 1);
+        Job j1 = new Job(1, 1, "j1");
+        Job j2 = new Job(2, 1, "j2");
         testObj.allJobs.add(j1); testObj.allJobs.add(j2);
         List<Bucket> buckets = testObj.createBuckets();
         Assert.assertTrue(true);
@@ -50,11 +50,11 @@ public class SchedulerTests {
     public void createBuckets_test() {
         Scheduler testObj = new Scheduler();
         testObj.allJobs = new ArrayList<>(4);
-        Job j1 = new Job(1, 1);
-        Job j2 = new Job(2, 2);
-        Job j3 = new Job(3, 3);
-        Job j4 = new Job(4, 4);
-        Job j5 = new Job(5, 5);
+        Job j1 = new Job(1, 1, "j1");
+        Job j2 = new Job(2, 2, "j2");
+        Job j3 = new Job(3, 3, "j3");
+        Job j4 = new Job(4, 4, "j4");
+        Job j5 = new Job(5, 5, "j5");
         testObj.allJobs.add(j1); testObj.allJobs.add(j2); testObj.allJobs.add(j3); testObj.allJobs.add(j4);
         testObj.allJobs.add(j5);
         List<Bucket> buckets = testObj.createBuckets();

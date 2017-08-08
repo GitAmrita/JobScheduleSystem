@@ -10,8 +10,8 @@ import java.util.List;
 public class ValidRequestTests {
     @Test
     public void canBeScheduled_true_test() {
-        Job j1 = new Job(1, 1); Job j2 = new Job(2, 2);
-        Job j3 = new Job(3, 3); Job j4 = new Job(4, 4);
+        Job j1 = new Job(1, 1, "j1"); Job j2 = new Job(2, 2, "j2");
+        Job j3 = new Job(3, 3, "j3"); Job j4 = new Job(4, 4, "j4");
         j1.expectedTimeToComplete = 2; j1.deadline = 20;
         j2.expectedTimeToComplete = 3; j2.deadline = 20;
         j3.expectedTimeToComplete = 6; j3.deadline = 20;
@@ -25,8 +25,8 @@ public class ValidRequestTests {
 
     @Test
     public void canBeScheduled_false1_test() {
-        Job j1 = new Job(1, 1); Job j2 = new Job(2, 2);
-        Job j3 = new Job(3, 3); Job j4 = new Job(4, 4);
+        Job j1 = new Job(1, 1, "j1"); Job j2 = new Job(2, 2, "j2");
+        Job j3 = new Job(3, 3, "j3"); Job j4 = new Job(4, 4, "j4");
         j1.expectedTimeToComplete = 2; j1.deadline = 20;
         j2.expectedTimeToComplete = 3; j2.deadline = 1;
         j3.expectedTimeToComplete = 6; j3.deadline = 20;
@@ -39,8 +39,8 @@ public class ValidRequestTests {
 
     @Test
     public void canBeScheduled_false2_test() {
-        Job j1 = new Job(1, 1); Job j2 = new Job(2, 2);
-        Job j3 = new Job(3, 3); Job j4 = new Job(4, 4);
+        Job j1 = new Job(1, 1, "j1"); Job j2 = new Job(2, 2, "j2");
+        Job j3 = new Job(3, 3, "j3"); Job j4 = new Job(4, 4, "j4");
         j1.expectedTimeToComplete = 2; j1.deadline = 20;
         j2.expectedTimeToComplete = 3; j2.deadline = 1;
         j3.expectedTimeToComplete = 6; j3.deadline = 20;

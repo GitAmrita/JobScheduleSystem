@@ -12,11 +12,7 @@ public class DoubleLinkedListTests {
     @Test
     public void addLast_test() {
         DoubleLinkedList testObj = new DoubleLinkedList();
-        Node n1 = new Node(new Job(1, 1), null, null);
-        Node n2 = new Node(new Job(2, 2), null, null);
-        Node n3 = new Node(new Job(3, 3), null, null);
-        Node n4 = new Node(new Job(4, 4), null, null);
-        testObj.addLast(new Job(1, 1));
+        testObj.addLast(new Job(1, 1, "j1"));
         Assert.assertFalse(testObj.isEmpty());
         Assert.assertEquals(testObj.size ,1);
     }
@@ -24,8 +20,8 @@ public class DoubleLinkedListTests {
     @Test
     public void getNext_test() {
         DoubleLinkedList testObj = new DoubleLinkedList();
-        Job j1 = new Job(1, 1); Job j2 = new Job(2, 2);
-        Job j3 = new Job(3, 3); Job j4 = new Job(4, 4);
+        Job j1 = new Job(1, 1, "j1"); Job j2 = new Job(2, 2, "j2");
+        Job j3 = new Job(3, 3, "j3"); Job j4 = new Job(4, 4, "j4");
         Node n1 = testObj.addLast(j1);
         Node n2 = testObj.addLast(j2);
         Node n3 = testObj.addLast(j3);
@@ -41,8 +37,8 @@ public class DoubleLinkedListTests {
     @Test
     public void removeFirst_test() {
         DoubleLinkedList testObj = new DoubleLinkedList();
-        Job j1 = new Job(1, 1); Job j2 = new Job(2, 2);
-        Job j3 = new Job(3, 3); Job j4 = new Job(4, 4);
+        Job j1 = new Job(1, 1, "j1"); Job j2 = new Job(2, 2, "j2");
+        Job j3 = new Job(3, 3, "j3"); Job j4 = new Job(4, 4, "j4");
         Node n1 = testObj.addLast(j1);
         Node n2 = testObj.addLast(j2);
         Node n3 = testObj.addLast(j3);
@@ -56,8 +52,8 @@ public class DoubleLinkedListTests {
     @Test
     public void removeLast_test() {
         DoubleLinkedList testObj = new DoubleLinkedList();
-        Job j1 = new Job(1, 1); Job j2 = new Job(2, 2);
-        Job j3 = new Job(3, 3); Job j4 = new Job(4, 4);
+        Job j1 = new Job(1, 1, "j1"); Job j2 = new Job(2, 2, "j2");
+        Job j3 = new Job(3, 3, "j3"); Job j4 = new Job(4, 4, "j4");
         Node n1 = testObj.addLast(j1);
         Node n2 = testObj.addLast(j2);
         Node n3 = testObj.addLast(j3);
@@ -71,8 +67,8 @@ public class DoubleLinkedListTests {
     @Test
     public void removeNode_test() {
         DoubleLinkedList testObj = new DoubleLinkedList();
-        Job j1 = new Job(1, 1); Job j2 = new Job(2, 2);
-        Job j3 = new Job(3, 3); Job j4 = new Job(4, 4);
+        Job j1 = new Job(1, 1, "j1"); Job j2 = new Job(2, 2, "j2");
+        Job j3 = new Job(3, 3, "j3"); Job j4 = new Job(4, 4, "j4");
         Node n1 = testObj.addLast(j1);
         Node n2 = testObj.addLast(j2);
         Node n3 = testObj.addLast(j3);

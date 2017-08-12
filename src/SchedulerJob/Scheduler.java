@@ -43,7 +43,7 @@ public class Scheduler {
         }
     }
 
-    private void populateBuckets() throws Exception {
+    public void populateBuckets() throws Exception {
         for (Map.Entry<String, Job> entry : jobNameObjectMapping.entrySet()) {
             Job job = entry.getValue();
             Bucket bucket = getBucket(job.priority);
@@ -52,7 +52,7 @@ public class Scheduler {
         }
     }
 
-    private Bucket getBucket(int priority) {
+    public Bucket getBucket(int priority) {
         // Based on the job priority select the bucket
         Bucket b = priorityBucketMapping.get(priority);
         if (b == null) {

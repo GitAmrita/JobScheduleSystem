@@ -4,8 +4,8 @@ package SchedulerJob;
  * Created by amritachowdhury on 8/5/17.
  */
 public class Bucket implements Comparable<Bucket>{
-    DoubleLinkedList jobs;
-    int priority;
+    public DoubleLinkedList jobs;
+    public int priority;
 
 
     public Bucket(int priority) {

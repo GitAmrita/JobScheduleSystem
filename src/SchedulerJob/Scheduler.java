@@ -1,84 +1,72 @@
+package SchedulerJob;
+
 import java.util.*;
 
 /**
- * Created by amritachowdhury on 8/5/17.
+ * Created by amritachowdhury on 8/12/17.
  */
 public class Scheduler {
-
-    //list that holds all the jobs
-    public static List<Job> allJobs;
-    // buckets holds jobs based on priority. Each bucket has a priority range that it can hold.
-    List<Bucket> buckets;
-    // hash maps for ease of finding the job from double linked list node of the bucket while removing
-    Map<Node, Bucket> nodeBucketLookUp;
-    Map<Job, Node> jobNodeLookUp;
-    // final result list
-    List<Job> scheduled;
-
-    // map priority with bucket
+    public HashMap<String, Job> jobNameObjectMapping;
+    public HashMap<String, List<String>> childParentMapping;
+    //tells which bucket has which priority jobs
     public  Map<Integer, Bucket> priorityBucketMapping;
-    static int bucketId;
+    public List<Bucket> buckets;
+    // hash maps for ease of finding the job from double linked list node of the bucket while removing
+    Map<String, Node> jobNodeLookUp;
+    // final list
+    public List<String> scheduled;
 
-    // *******used to temporarily store the testInput and job relationship*******
-    // input and job mapping, needed for pre processing steps
-    public static Map<TestInput, Job> job;
-    // once the job is created in the system, map it with input dependencies
-    public static Map<Job, List<TestInput>> children;
-    // ***************************************************************************
 
     public Scheduler() {
-        this.allJobs = new ArrayList<>();
-        this.buckets = new ArrayList<>();
-        this.nodeBucketLookUp = new HashMap<>();
-        this.jobNodeLookUp = new HashMap<>();
-        this.scheduled = new LinkedList<>();
-        this.job = new HashMap<>();
-        this.children = new HashMap<>();
+        this.jobNameObjectMapping = new HashMap<>();
+        this.childParentMapping = new HashMap<>();
         this.priorityBucketMapping = new HashMap<>();
-        bucketId = 0;
+        this.jobNodeLookUp = new HashMap<>();
+        this.buckets = new ArrayList<>();
+        this.scheduled = new ArrayList<>();
     }
 
     public boolean run() {
         try {
             String message = "Start the job scheduler";
             Logging.log(message, this.getClass().getName(), LogLevel.INFO);
-            preProcess();
+            populateBuckets();
+            // sorting the buckets so that bucket with the highest priority range comes first
+            Collections.sort(buckets);
             pickBucketToProcess();
+            message = "Scheduler pre process completed";
+            Logging.log(message, this.getClass().getName(), LogLevel.INFO);
             return true;
         } catch (Exception e) {
             Logging.log(e.getMessage(), this.getClass().getName(), LogLevel.ERROR);
             return false;
         }
-
     }
 
-    private void preProcess () throws Exception{
-        populateBuckets();
-        // sorting the buckets so that bucket with the highest priority range comes first
-        Collections.sort(buckets);
-        String message = "Scheduler pre process completed";
-        Logging.log(message, this.getClass().getName(), LogLevel.INFO);
-    }
-
-    public void populateBuckets() throws Exception {
-        for (Job j :allJobs) {
-            Bucket b = getBucket(j.priority);
-            Node n = b.addJob(j);
-            nodeBucketLookUp.put(n, b);
-            jobNodeLookUp.put(j, n);
+    private void populateBuckets() throws Exception {
+        for (Map.Entry<String, Job> entry : jobNameObjectMapping.entrySet()) {
+            Job job = entry.getValue();
+            Bucket bucket = getBucket(job.priority);
+            Node n = bucket.addJob(job);
+            jobNodeLookUp.put(job.name, n);
         }
     }
 
-    public Bucket getBucket(int priority) {
+    private Bucket getBucket(int priority) {
         // Based on the job priority select the bucket
         Bucket b = priorityBucketMapping.get(priority);
         if (b == null) {
-            b = new Bucket(bucketId, priority);
+            b = new Bucket(priority);
             priorityBucketMapping.put(priority, b);
             buckets.add(b);
         }
-        bucketId++;
         return b;
+    }
+
+    private Bucket nodeBucketLookUp(Node node) {
+        Job job = node.data;
+        int priority = job.priority;
+        return priorityBucketMapping.get(priority);
     }
 
     public void pickBucketToProcess() throws Exception{
@@ -98,23 +86,24 @@ public class Scheduler {
         // is scheduled.
         DoubleLinkedList nodes = bucket.jobs;
         if (nodes == null || nodes.isEmpty()) {
-            return false;
+            return false; // jobs in this bucket is all scheduled,go back fetch another bucket
         }
         boolean timeOver = false;
         long currentTime = System.currentTimeMillis();
         long endTime = currentTime + Config.BUCKET_TIME_SLICE;
         while (!nodes.isEmpty() && !timeOver) {
-            // start from the head node
+            // start from the head node which is the first job in the bucket
             Node currentNode = nodes.getNext(null);
             while (currentNode != null) {
                 if (currentTime >= endTime) { // bucket time slice is over, get the next bucket
                     timeOver = true;
                     break;
                 }
-                // get the jobs that are not finished and don't have unfinished dependencies
+                // get the jobs that are not finished but all the dependencies are finished
                 if (currentNode.data.status == JobStatus.TO_BE_STARTED && currentNode.data.children.isEmpty()) {
                     currentNode.data.status = JobStatus.IN_PROGRESS;
-                    if (processJob(currentNode.data)) {
+                    boolean isJobFinished = processJob(currentNode.data);
+                    if (isJobFinished) {
                         finishJob(currentNode.data);
                         nodes = bucket.jobs;
                     } else {
@@ -143,8 +132,8 @@ public class Scheduler {
 
     public void finishJob(Job job) throws Exception{
         // update job status to finished. Delete the double linked list node containing the job from the Bucket
-        Node nodeToRemove = jobNodeLookUp.get(job);
-        Bucket b = nodeBucketLookUp.get(nodeToRemove);
+        Node nodeToRemove = jobNodeLookUp.get(job.name);
+        Bucket b = nodeBucketLookUp(nodeToRemove);
         if (b.removeJob(nodeToRemove) == null) {
             String message = String.format("%s There was a problem updating job %s to finished status ", job.name);
             Logging.log(message, this.getClass().getName(), LogLevel.ERROR);
@@ -153,21 +142,28 @@ public class Scheduler {
         job.status = JobStatus.FINISHED;
         // remove this job from all the jobs that has a dependency on it, since this job is completed and hence the
         // dependency is over.
-        for (Job j : job.parents) {
-            j.children.remove(job);
-            String message = String.format("job %s removed from %s", job.name, j.name);
-            Logging.log(message, this.getClass().getName(), LogLevel.DEBUG);
+        List<String> parentNames = childParentMapping.get(job.name);
+        if (parentNames != null) {
+            for (String parentName : parentNames) {
+                Job parent = jobNameObjectMapping.get(parentName);
+                parent.children.remove(job.name);
+                String message = String.format("job %s removed from %s", job.name, parent.name);
+                Logging.log(message, this.getClass().getName(), LogLevel.DEBUG);
+            }
         }
+
+        childParentMapping.remove(job.name);
+        jobNameObjectMapping.remove(job.name);
+
         // add job to the list of scheduled jobs
         String message = String.format("%s job finished, adding to output", job.name);
         Logging.log(message, this.getClass().getName(), LogLevel.INFO);
-        scheduled.add(job);
+        scheduled.add(job.name);
     }
 
     public void printScheduleRoutine() {
-        for (Job j : scheduled) {
-            System.out.println(j.name);
+        for (String jobName : scheduled ) {
+            System.out.println(jobName);
         }
     }
-
 }

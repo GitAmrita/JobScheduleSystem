@@ -21,8 +21,8 @@ public class Inputs {
         t2.setDependencies(t2Dependencies);
         List<TestInput> t1Dependencies = new ArrayList<>(); t1Dependencies.add(t4); t1Dependencies.add(t5);
         t1.setDependencies(t1Dependencies);
-        List<TestInput> input = new ArrayList<>(); input.add(t5);  input.add(t6); input.add(t1); input.add(t2);  input.add(t4);
-        input.add(t3);
+        List<TestInput> input = new ArrayList<>(); input.add(t2); input.add(t3);  input.add(t4); input.add(t5);  input.add(t6);
+        input.add(t1);
         return input;
     }
 

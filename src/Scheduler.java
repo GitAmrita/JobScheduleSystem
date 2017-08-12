@@ -15,6 +15,10 @@ public class Scheduler {
     // final result list
     List<Job> scheduled;
 
+    // map priority with bucket
+    public  Map<Integer, Bucket> priorityBucketMapping;
+    static int bucketId;
+
     // *******used to temporarily store the testInput and job relationship*******
     // input and job mapping, needed for pre processing steps
     public static Map<TestInput, Job> job;
@@ -30,6 +34,8 @@ public class Scheduler {
         this.scheduled = new LinkedList<>();
         this.job = new HashMap<>();
         this.children = new HashMap<>();
+        this.priorityBucketMapping = new HashMap<>();
+        bucketId = 0;
     }
 
     public boolean run() {
@@ -47,7 +53,6 @@ public class Scheduler {
     }
 
     private void preProcess () throws Exception{
-        createBuckets();
         populateBuckets();
         // sorting the buckets so that bucket with the highest priority range comes first
         Collections.sort(buckets);
@@ -55,62 +60,26 @@ public class Scheduler {
         Logging.log(message, this.getClass().getName(), LogLevel.INFO);
     }
 
-    public List<Bucket> createBuckets() {
-        // get the max and min priority (range) and modulo with no of buckets. That would give the range of priority
-        // each bucket will hold. Create buckets.
-        int maxVal;
-        int[] range = populatePriorityRange();
-        if (range[0] == range[1]) {
-            Bucket b = new Bucket(0, range[0], range[0]);
-            buckets.add(b);
-        } else {
-            int size = ((range[1] - range[0]) + 1 ) / Config.NO_OF_BUCKETS;
-            int minVal = range[0];
-            for (int i = 0; i < Config.NO_OF_BUCKETS; i++) {
-                maxVal = i == Config.NO_OF_BUCKETS - 1 ? range[1] : minVal + size - 1;
-                Bucket b = new Bucket(i, minVal, maxVal);
-                buckets.add(b);
-                minVal += size;
-            }
-        }
-        return buckets;
-    }
-
-    public int[] populatePriorityRange() {
-        // get range of priority = max - min
-        int minPriority = Integer.MAX_VALUE; int maxPriority = Integer.MIN_VALUE;
-        for (Job j : allJobs) {
-            if (j.priority < minPriority) {
-                minPriority = j.priority;
-            } if (j.priority > maxPriority) {
-                maxPriority = j.priority;
-            }
-        }
-        return new int[] {minPriority, maxPriority};
-    }
-
-    private void populateBuckets() throws Exception {
+    public void populateBuckets() throws Exception {
         for (Job j :allJobs) {
             Bucket b = getBucket(j.priority);
-            if ( b == null ) {
-                String message = "Couldn't find bucket";
-                Logging.log(message, this.getClass().getName(), LogLevel.ERROR);
-                throw new Exception ("Couldn't find bucket");
-            }
             Node n = b.addJob(j);
             nodeBucketLookUp.put(n, b);
             jobNodeLookUp.put(j, n);
         }
     }
 
+
     public Bucket getBucket(int priority) {
         // Based on the job priority select the bucket
-        for (Bucket b : buckets) {
-            if (priority <= b.maxPriority && priority >= b.minPriority) {
-                return b;
-            }
+        Bucket b = priorityBucketMapping.get(priority);
+        if (b == null) {
+            b = new Bucket(bucketId, priority);
+            priorityBucketMapping.put(priority, b);
+            buckets.add(b);
         }
-        return null;
+        bucketId++;
+        return b;
     }
 
     public void pickBucketToProcess() throws Exception{

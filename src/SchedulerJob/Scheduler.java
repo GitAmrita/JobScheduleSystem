@@ -119,14 +119,7 @@ public class Scheduler {
                     } else {
                         tick += currentNode.data.timeElapsed;
                     }
-                    // if N > 1 then
-                    //   if jobs_done < buckets.jobs.size and jobs_done <= N
-                    //      ( Global tick is golbal->tick + elapsetime. } // this will work for multiprocessor.
-                    //   else
-                    //       elapsetime = max(elapase_time, currentNode.data.timeElapsed)
-                    // else
-                    //   Global tick is golbal->tick + currentNode.data.timeElapsed.
-
+                    
                     if (isJobFinished) {
                         finishJob(currentNode.data);
                         nodes = bucket.jobs;

@@ -2,43 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51b7d1ae-54c4-4305-bde7-dad4b3325693" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Bucket.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Config.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/DoubleLinkedList.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Inputs.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Job.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/JobStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/LogLevel$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/LogLevel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Logging.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Node.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/Scheduler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/TestInput.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/ValidRequest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JobScheduler/ValidRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Bucket.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Config.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DoubleLinkedList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Inputs.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Job.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JobStatus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/LogLevel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Logging.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Node.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Scheduler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/TestInput.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ValidRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/mainOld.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/SchedulerJob/Bucket.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/SchedulerJob/Bucket.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/SchedulerJob/RequestValidity$1.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/SchedulerJob/RequestValidity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/SchedulerJob/RequestValidity.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/SchedulerJob/RequestValidity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/SchedulerJob/Scheduler.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/SchedulerJob/Scheduler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/JobScheduler/DoubleLinkedListTests.class" afterPath="$PROJECT_DIR$/out/test/JobScheduler/DoubleLinkedListTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/JobScheduler/JobTests.class" afterPath="$PROJECT_DIR$/out/test/JobScheduler/JobTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/JobScheduler/SchedulerTests.class" afterPath="$PROJECT_DIR$/out/test/JobScheduler/SchedulerTests.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JobScheduler/main.class" afterPath="$PROJECT_DIR$/out/production/JobScheduler/main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UnitTests/DoubleLinkedListTests.java" afterPath="$PROJECT_DIR$/UnitTests/DoubleLinkedListTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UnitTests/JobTests.java" afterPath="$PROJECT_DIR$/UnitTests/JobTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UnitTests/SchedulerTests.java" afterPath="$PROJECT_DIR$/UnitTests/SchedulerTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SchedulerJob/Bucket.java" afterPath="$PROJECT_DIR$/src/SchedulerJob/Bucket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SchedulerJob/RequestValidity.java" afterPath="$PROJECT_DIR$/src/SchedulerJob/RequestValidity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SchedulerJob/Scheduler.java" afterPath="$PROJECT_DIR$/src/SchedulerJob/Scheduler.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -72,12 +41,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestInputs.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StartScheduler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SchedulerJob/StartScheduler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#childToParentMapping#0;class#StartScheduler#0" expanded="false" />
+                <element signature="method#setJobPriority#0;class#StartScheduler#0" expanded="false" />
+                <element signature="method#canJobsBeCompletedInTime#0;class#StartScheduler#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestInputs.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SchedulerJob/TestInputs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+            <state relative-caret-position="75">
+              <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+              <folding>
+                <element signature="method#inputTest_1#0;class#TestInputs#0" expanded="false" />
+                <element signature="method#inputTest_2#0;class#TestInputs#0" expanded="false" />
+                <element signature="method#inputTest_3#0;class#TestInputs#0" expanded="false" />
+                <element signature="method#inputTest_4#0;class#TestInputs#0" expanded="false" />
+                <element signature="method#inputTest_5#0;class#TestInputs#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Scheduler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Scheduler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+              <folding>
+                <element signature="method#Scheduler#0;class#Scheduler#0" expanded="false" />
+                <element signature="method#populateBuckets#0;class#Scheduler#0" expanded="false" />
+                <element signature="method#getBucket#0;class#Scheduler#0" expanded="false" />
+                <element signature="method#nodeBucketLookUp#0;class#Scheduler#0" expanded="false" />
+                <element signature="method#finishJob#0;class#Scheduler#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Job.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Job.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-101">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,13 +168,11 @@
         <option value="$PROJECT_DIR$/src/SchedulerJob/JobNew.java" />
         <option value="$PROJECT_DIR$/src/SchedulerJob/ConfigNew.java" />
         <option value="$PROJECT_DIR$/src/SchedulerJob/Logging.java" />
-        <option value="$PROJECT_DIR$/src/SchedulerJob/Config.java" />
         <option value="$PROJECT_DIR$/src/SchedulerJob/Input.java" />
         <option value="$PROJECT_DIR$/src/SchedulerJob/main.java" />
         <option value="$PROJECT_DIR$/src/mainOld.java" />
         <option value="$PROJECT_DIR$/src/SchedulerJob/Job.java" />
         <option value="$PROJECT_DIR$/src/SchedulerJob/ValidRequest.java" />
-        <option value="$PROJECT_DIR$/src/SchedulerJob/RequestValidity.java" />
         <option value="$PROJECT_DIR$/src/SchedulerJob/DoubleLinkedList.java" />
         <option value="$PROJECT_DIR$/src/SchedulerJob/Node.java" />
         <option value="$PROJECT_DIR$/src/ValidRequest.java" />
@@ -156,11 +182,13 @@
         <option value="$PROJECT_DIR$/UnitTests/ValidRequestTests.java" />
         <option value="$PROJECT_DIR$/UnitTests/RequestValidityTests.java" />
         <option value="$PROJECT_DIR$/src/SchedulerJob/Bucket.java" />
-        <option value="$PROJECT_DIR$/src/SchedulerJob/Scheduler.java" />
         <option value="$PROJECT_DIR$/UnitTests/SchedulerTests.java" />
         <option value="$PROJECT_DIR$/UnitTests/DoubleLinkedListTests.java" />
         <option value="$PROJECT_DIR$/UnitTests/JobTests.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
+        <option value="$PROJECT_DIR$/src/SchedulerJob/RequestValidity.java" />
+        <option value="$PROJECT_DIR$/src/SchedulerJob/Scheduler.java" />
+        <option value="$PROJECT_DIR$/src/SchedulerJob/Config.java" />
       </list>
     </option>
   </component>
@@ -188,7 +216,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -198,20 +225,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="JobScheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JobScheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JobScheduler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -251,6 +264,7 @@
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -652,13 +666,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -670,6 +682,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -710,109 +724,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>38</line>
+          <url>file://$PROJECT_DIR$/src/SchedulerJob/Scheduler.java</url>
+          <line>119</line>
           <properties />
-          <option name="timeStamp" value="700" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="701" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>39</line>
-          <properties />
-          <option name="timeStamp" value="702" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="703" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>41</line>
-          <properties />
-          <option name="timeStamp" value="704" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="705" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="706" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>44</line>
-          <properties />
-          <option name="timeStamp" value="707" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="708" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="709" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="710" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="711" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>49</line>
-          <properties />
-          <option name="timeStamp" value="712" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="713" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="714" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>52</line>
-          <properties />
-          <option name="timeStamp" value="715" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SchedulerJob/Job.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="716" />
+          <option name="timeStamp" value="718" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="718" />
+      <option name="time" value="742" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -830,104 +748,20 @@
     <entry file="file://$PROJECT_DIR$/src/PriorityRangeInBucket.java" />
     <entry file="file://$PROJECT_DIR$/src/Helper.java" />
     <entry file="file://$PROJECT_DIR$/src/Processor.java" />
-    <entry file="file://$PROJECT_DIR$/src/Logging.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logging.java" />
     <entry file="file://$PROJECT_DIR$/UnitTests/FirstTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/DoubleLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="65" column="5" lean-forward="false" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JobStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoubleLinkedList.java" />
+    <entry file="file://$PROJECT_DIR$/src/Node.java" />
+    <entry file="file://$PROJECT_DIR$/src/JobStatus.java" />
     <entry file="file://$PROJECT_DIR$/UnitTests/IntegrationTests.java" />
-    <entry file="file://$PROJECT_DIR$/src/Bucket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerNew.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Job.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="8" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/ConfigNew.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="74" lean-forward="false" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/LogLevelNew.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogLevel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bucket.java" />
+    <entry file="file://$PROJECT_DIR$/src/SchedulerNew.java" />
+    <entry file="file://$PROJECT_DIR$/src/TestInput.java" />
+    <entry file="file://$PROJECT_DIR$/src/Job.java" />
+    <entry file="file://$PROJECT_DIR$/src/Config.java" />
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/ConfigNew.java" />
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/LogLevelNew.java" />
+    <entry file="file://$PROJECT_DIR$/src/LogLevel.java" />
     <entry file="file://$PROJECT_DIR$/src/SchedulerJob/LogLevel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -952,84 +786,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/InputNew.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/JobNew.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="75" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/ValidRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/RequestValidity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#327#833#0" expanded="true" />
-            <element signature="e#832#833#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Inputs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/InputNew.java" />
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/JobNew.java" />
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/main.java" />
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/ValidRequest.java" />
+    <entry file="file://$PROJECT_DIR$/src/Inputs.java" />
     <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Input.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mainOld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ValidRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="43" column="1" lean-forward="false" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainOld.java" />
+    <entry file="file://$PROJECT_DIR$/src/ValidRequest.java" />
     <entry file="file://$PROJECT_DIR$/src/SchedulerJob/DoubleLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1046,77 +819,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Scheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1345">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/StartScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#childToParentMapping#0;class#StartScheduler#0" expanded="false" />
-            <element signature="method#setJobPriority#0;class#StartScheduler#0" expanded="false" />
-            <element signature="method#canJobsBeCompletedInTime#0;class#StartScheduler#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTests/ValidRequestTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Scheduler.java" />
+    <entry file="file://$PROJECT_DIR$/UnitTests/ValidRequestTests.java" />
     <entry file="file://$PROJECT_DIR$/UnitTests/RequestValidityTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Bucket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <element signature="method#compareTo#0;class#Bucket#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Scheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="55" column="54" lean-forward="true" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
-          <folding>
-            <element signature="method#Scheduler#0;class#Scheduler#0" expanded="false" />
-            <element signature="method#run#0;class#Scheduler#0" expanded="false" />
-            <element signature="method#populateBuckets#0;class#Scheduler#0" expanded="false" />
-            <element signature="method#nodeBucketLookUp#0;class#Scheduler#0" expanded="false" />
-            <element signature="method#pickBucketToProcess#0;class#Scheduler#0" expanded="false" />
-            <element signature="method#pickJobToProcess#0;class#Scheduler#0" expanded="false" />
-            <element signature="method#processJob#0;class#Scheduler#0" expanded="false" />
-            <element signature="method#finishJob#0;class#Scheduler#0" expanded="false" />
-            <element signature="method#printScheduleRoutine#0;class#Scheduler#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1126,7 +836,7 @@
         <state relative-caret-position="409">
           <caret line="53" column="20" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1135,9 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1095">
           <caret line="73" column="52" lean-forward="true" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1146,7 +853,7 @@
         <state relative-caret-position="304">
           <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#inputList_with_dependency_no_timeout#0;class#StartSchedulerTests#0" expanded="false" />
             <element signature="method#inputList_with_dependency_no_timeout_1#0;class#StartSchedulerTests#0" expanded="false" />
             <element signature="method#inputList_no_dependency_no_timeout#0;class#StartSchedulerTests#0" expanded="false" />
@@ -1161,21 +868,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Job.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UnitTests/JobTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="87" column="46" lean-forward="true" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Bucket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding>
+            <element signature="method#compareTo#0;class#Bucket#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/RequestValidity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+          <folding>
+            <element signature="method#canScheduleBeCompleted#0;class#RequestValidity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/TestInputs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+          <folding>
+            <element signature="method#inputTest_1#0;class#TestInputs#0" expanded="false" />
+            <element signature="method#inputTest_2#0;class#TestInputs#0" expanded="false" />
+            <element signature="method#inputTest_3#0;class#TestInputs#0" expanded="false" />
+            <element signature="method#inputTest_4#0;class#TestInputs#0" expanded="false" />
+            <element signature="method#inputTest_5#0;class#TestInputs#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/StartScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#childToParentMapping#0;class#StartScheduler#0" expanded="false" />
+            <element signature="method#setJobPriority#0;class#StartScheduler#0" expanded="false" />
+            <element signature="method#canJobsBeCompletedInTime#0;class#StartScheduler#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1189,10 +933,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/TestInputs.java">
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Job.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="-101">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Scheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+          <folding>
+            <element signature="method#Scheduler#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#populateBuckets#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#getBucket#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#nodeBucketLookUp#0;class#Scheduler#0" expanded="false" />
+            <element signature="method#finishJob#0;class#Scheduler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SchedulerJob/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>

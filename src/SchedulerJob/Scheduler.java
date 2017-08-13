@@ -15,6 +15,7 @@ public class Scheduler {
     Map<String, Node> jobNodeLookUp;
     // final list
     public List<String> scheduled;
+    public int tick = 0;
 
 
     public Scheduler() {
@@ -34,7 +35,7 @@ public class Scheduler {
             // sorting the buckets so that bucket with the highest priority range comes first
             Collections.sort(buckets);
             pickBucketToProcess();
-            message = "Scheduler pre process completed";
+            message = "Scheduler process completed";
             Logging.log(message, this.getClass().getName(), LogLevel.INFO);
             return true;
         } catch (Exception e) {
@@ -85,12 +86,17 @@ public class Scheduler {
         // first. Go for the next bucket when bucket time slice elapses. Returns false when all the jobs in the bucket
         // is scheduled.
         DoubleLinkedList nodes = bucket.jobs;
+        // if the no of jobs in the bucket < no of processors then the extra processors will sit idle
+        int noOfProcessorsInUse = Math.min(bucket.jobs.size, Config.NO_OF_PROCESSORS);
         if (nodes == null || nodes.isEmpty()) {
-            return false; // jobs in this bucket is all scheduled,go back fetch another bucket
+            return false; // jobs in this bucket is all scheduled, go back fetch another bucket
         }
         boolean timeOver = false;
         long currentTime = System.currentTimeMillis();
         long endTime = currentTime + Config.BUCKET_TIME_SLICE;
+        int jobsPicked = 1; // for number of jobs picked in multi processor.
+        long maxElapsedTime = 0;
+
         while (!nodes.isEmpty() && !timeOver) {
             // start from the head node which is the first job in the bucket
             Node currentNode = nodes.getNext(null);
@@ -103,14 +109,34 @@ public class Scheduler {
                 if (currentNode.data.status == JobStatus.TO_BE_STARTED && currentNode.data.children.isEmpty()) {
                     currentNode.data.status = JobStatus.IN_PROGRESS;
                     boolean isJobFinished = processJob(currentNode.data);
+                    if (noOfProcessorsInUse > 1) {
+                        if (jobsPicked % noOfProcessorsInUse == 0) {
+                            tick += Math.max(maxElapsedTime, currentNode.data.timeElapsed );
+                            maxElapsedTime = 0;
+                        } else {
+                            maxElapsedTime = Math.max(maxElapsedTime, currentNode.data.timeElapsed );
+                        }
+                    } else {
+                        tick += currentNode.data.timeElapsed;
+                    }
+                    // if N > 1 then
+                    //   if jobs_done < buckets.jobs.size and jobs_done <= N
+                    //      ( Global tick is golbal->tick + elapsetime. } // this will work for multiprocessor.
+                    //   else
+                    //       elapsetime = max(elapase_time, currentNode.data.timeElapsed)
+                    // else
+                    //   Global tick is golbal->tick + currentNode.data.timeElapsed.
+
                     if (isJobFinished) {
                         finishJob(currentNode.data);
                         nodes = bucket.jobs;
                     } else {
                         currentNode.data.status = JobStatus.TO_BE_STARTED;
                     }
+
                 }
                 currentNode = nodes.getNext(currentNode);
+                jobsPicked++;
             }
         }
         return nodes == null || nodes.isEmpty() ? false : true;
@@ -120,11 +146,20 @@ public class Scheduler {
         long startTime = System.currentTimeMillis();
         long endTime = startTime + Config.JOB_TIME_SLICE;
         long currentTime = startTime;
+
         while (currentTime <= endTime) { // keep a tab on job time slice
             // do some real work with the job
             currentTime = System.currentTimeMillis();
+            // if the job finishes before the time slice
+            if (job.timeElapsed + currentTime >= job.expectedTimeToComplete) {
+                job.timeElapsed += currentTime;
+                String message = String.format("%s time elapsed so far %x", job.name, job.timeElapsed);
+                Logging.log(message, this.getClass().getName(), LogLevel.DEBUG);
+                return true;
+            }
         }
-        job.timeElapsed += endTime - startTime;
+        // job might finish right at time slice or might not finish
+        job.timeElapsed += endTime - currentTime;
         String message = String.format("%s time elapsed so far %x", job.name, job.timeElapsed);
         Logging.log(message, this.getClass().getName(), LogLevel.DEBUG);
         return job.timeElapsed >= job.expectedTimeToComplete ? true : false;
@@ -165,5 +200,7 @@ public class Scheduler {
         for (String jobName : scheduled ) {
             System.out.println(jobName);
         }
+        System.out.println(String.format("Total number of ticks in %d processor system is %d seconds",
+                Config.NO_OF_PROCESSORS, tick/1000));
     }
 }

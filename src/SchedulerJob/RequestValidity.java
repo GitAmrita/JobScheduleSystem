@@ -1,8 +1,6 @@
 package SchedulerJob;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 /**
  * Created by amritachowdhury on 8/12/17.
@@ -25,6 +23,7 @@ public class RequestValidity {
             }
         });
         queue.addAll(jobs);
+
     }
 
     public boolean canScheduleBeCompleted() {
@@ -44,4 +43,5 @@ public class RequestValidity {
         }
         return true;
     }
+
 }

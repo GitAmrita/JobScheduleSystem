@@ -119,7 +119,7 @@ public class Scheduler {
                     } else {
                         tick += currentNode.data.timeElapsed;
                     }
-                    
+
                     if (isJobFinished) {
                         finishJob(currentNode.data);
                         nodes = bucket.jobs;
